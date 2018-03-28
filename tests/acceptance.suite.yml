@@ -7,6 +7,13 @@
 actor: AcceptanceTester
 modules:
     enabled:
-        - PhpBrowser:
-            url: http://localhost/myapp
+        - Asserts
+        - WebDriver:
+            url: "%WEBSITE_FRONTEND_URL%"
+            host: selenium-hub
+            port: 4444
+            browser: chrome
+            window_size: 1920x1080
+            log_js_errors: true
+            # clear_cookies: false
         - \Helper\Acceptance
